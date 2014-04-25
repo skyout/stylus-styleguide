@@ -36,7 +36,7 @@ The point of having style guidelines is to have a common vocabulary of coding so
 Indentation should be **four spaces**. If using tabs in a code editor, ensure that tabs are set to four spaces. Each selector should have at least one line break above, this helps to separate selectors and ideas. Properties should immediately follow the selector without a line break, which will aide in putting context to the properties. Remove any trailing whitespaces. Trailing whitespaces are unnecessary and can complicate diffs.
 
 
-```stylus
+```sass
 // bad
 h1
   padding: 0
@@ -62,7 +62,7 @@ All properties should be on their own line. Properties should be ordered alphabe
 
 
 
-```stylus
+```sass
 // bad
 h1
     padding: 5px
@@ -83,7 +83,7 @@ h1
 
 When possible, if multiple methods have the same styles or very similar styles then chain them together using commas. If two selectors have very similar styles with one or two differences, chain them together with the first selector's styles, then after set the minor changes to the second selector. 
 
-```stylus
+```sass
 // bad
 ol
     color: #000
@@ -118,7 +118,7 @@ Descendant selectors are inefficient because, for each element that matches the 
 Nesting should be four spaces, and any selectors should have a line break before them.
 
 
-```stylus
+```sass
 // bad
 body
     border-top: 1px solid #000
@@ -147,7 +147,7 @@ h1
 Classes, pseduo-classes, and other modifiers should nest inside their selector to maintain readability. The same rules with a line break above apply to these modifiers. Pseduo-class modifiers should go as close to their parent selector as possible. This allows developers to quick see any hover or other states without having to find them later in the file. Class modifiers should also go near their selector whenever possible.  
 
 
-```stylus
+```sass
 // bad
 h1.green
     color: #0085e3
@@ -168,7 +168,7 @@ h1
 
 Global styles for elements and very common classes should be placed near the top of the global stylesheet. This can include things like body, link, input, paragraph, and header styles. 
 
-```stylus
+```sass
 @charset "UTF-8"
 
 body
@@ -206,7 +206,7 @@ CSS offers a variety of shorthand properties (like `font`, `background`, `list-s
 
 `font` should be declared on the body tag with the full single-line declaration as follows: 
 
-```stylus
+```sass
 font: font-style font-weight font-variant font-size/line-height font-family
 // font: normal normal normal 14px/1.5 Arial, Helvetica, sans-serif
 ```
@@ -219,14 +219,14 @@ Any subsequent modifications to that font tag should be done in multi-line decla
 
 `background` should be declared using the single-line declaration the first time.
 
-```stylus
+```sass
 background: color image repeat attachment position(left, top) size clip attachment
 // background: #eee url("img/pic.jpg") no-repeat scroll left top auto padding-box border-box 
 ```
 
 Like font, Any subsequent modifications to that font tag should be done in multi-line declaration, *unless* there is a change to the `url()`, then the full declaration is required. One exception to this is if there original declaration only sets a color then the single `background: color` shorthand is acceptable. 
 
-```stylus
+```sass
 background: #fff
 ```
 
@@ -234,7 +234,7 @@ background: #fff
 
 Like the two preceding properties, `list-style` should be declared initially using the single-line declaration the first time. Any subsequent modifications to that font tag should be done in multi-line declaration, *unless* there is a change to the `url()`, then the full declaration is required.
 
-```stylus
+```sass
 list-style: list-style-type list-style-position list-style-image
 // list-style: disc outside none
 ```
@@ -244,7 +244,7 @@ list-style: list-style-type list-style-position list-style-image
 
 Omit unit specification after `0` values unless they are required. For color values that permit it, 3 character hexadecimal notation is shorter and more succinct. As a general rule, if a unit specification isn't required, then don't use it.
 
-```stylus
+```sass
 // bad
 p
     color: #000000
@@ -263,7 +263,7 @@ p
 
 Shorthand values should be used for `padding`, `margin`, and `border` if **more than one** value is going to be set.
 
-```stylus
+```sass
 // bad
 p
     padding-left: 20px
@@ -278,7 +278,7 @@ p
 
 For `padding`, `margin`, and `border`, 1 2 or 4 values are acceptable. Leaving off single values can cause ambiguous code and lead to difficult comprehending. 
 
-```stylus
+```sass
 // bad
 p
     padding: 0 20px 10px
@@ -298,7 +298,7 @@ time
 
 Similarly when declaring `box-shadow` and `text-shadow` ambigiously leaving off values is bad form. Always declare all values of these properties. However, mixins are encourage for these due to vendor prefixes. 
 
-```stylus
+```sass
 box-shadow: inset 3px 3px 1px 0 rgba(0,0,0,0.3)
 // box-shadow: none h-shadow v-shadow blur spread color 
 
@@ -311,7 +311,7 @@ text-shadow: 1px 1px 1px rgba(0,0,0,0.5)
 
 Use double `"` rather than single `'` quotation marks for attribute selectors or property values. Also don’t forget to quote attribute values in selectors. Exceptions can be made for values that require use of quotes inside the property value, such as the `content` or `quote`. 
 
-```stylus
+```sass
 // bad
 html
     background: #fff url('img/bg.png') repeat 0 0
@@ -343,7 +343,7 @@ input[type="search"]
 
 **Use only lowercase**. This applies to selectors, properties, and property values. Exceptions are for any strings inside css property values, such as `content`. 
 
-```stylus
+```sass
 // bad
 UL
     color: #EEEEEE
@@ -370,7 +370,7 @@ ul
 Use meaningful or generic ID and class names. Instead of presentational or cryptic names, always use ID and class names that reflect the purpose of the element in question, or that are otherwise generic. Names that are specific and reflect the purpose of the element should be preferred as these are most understandable and the least likely to change. Generic names are simply a fallback for elements that have no particular or no meaning different from their siblings. They are typically needed as “helpers”. Using functional or generic names reduces the probability of unnecessary document or template changes.
 
 
-```stylus
+```sass
 // bad
 
 // meaningless
@@ -392,7 +392,7 @@ Use meaningful or generic ID and class names. Instead of presentational or crypt
 Use ID and class names that are as short as possible but as long as necessary. Try to convey what an ID or class is about while being as brief as possible. Using ID and class names this way contributes to acceptable levels of understandability and code efficiency. Unless necessary, do not use element names in conjunction with IDs.
 
 
-```stylus
+```sass
 // bad
 
 //too long
@@ -412,7 +412,7 @@ Use ID and class names that are as short as possible but as long as necessary. T
 Separate words in ID and class names by a hyphen. Do not concatenate words and abbreviations in selectors by any characters (including none at all) other than hyphens, in order to improve understanding and scannability.
 
 
-```stylus
+```sass
 // bad
 
 // not readble
@@ -436,17 +436,17 @@ SASS imports and charset declarations should always be at the top of each SASS f
 * Variables, fonts, and then mixin declarations should then immediately follow. 
 * If the file needs a reset or normalize, that should then follow next. 
 * Comments should also be used to describe any other mixins that are not the standard `_variables`, `_fonts`, `_mixins`, or `_reset`
-* File extenions should only be used if the extension is not the default `.stylus`
+* File extenions should only be used if the extension is not the default `.sass`
 
-```stylus
+```sass
 // bad
 
 // imports
-@import "_mixins.stylus"
+@import "_mixins.sass"
 @import "_fonts.scss"
-@import "_variables.stylus"
-@import "_reset.stylus"
-@import "_tips.stylus"
+@import "_variables.sass"
+@import "_reset.sass"
+@import "_tips.sass"
 
 @charset "UTF-8"
 
@@ -470,14 +470,14 @@ SASS imports and charset declarations should always be at the top of each SASS f
 <a name="mixins">Mixins</a>
 ------
 
-Mixins are declared using the `@mixin` declaration. Mixins should be housed in a file called `_mixins.stylus`. Mixins are used for code that is frequently repeated through the stylesheets, but may not necessarily correspond to a single element or class. 
+Mixins are declared using the `@mixin` declaration. Mixins should be housed in a file called `_mixins.sass`. Mixins are used for code that is frequently repeated through the stylesheets, but may not necessarily correspond to a single element or class. 
 
 * Mixin names should follow dashed, lowercase formatting.
 * Mixins should be order alphabetically by their title for organization.
 * If applicable, provide default settings in the mixin.
 
 
-```stylus
+```sass
 // bad
 @mixin button($color)
     background: $color
@@ -496,9 +496,9 @@ Mixins are encouraged for multiple vendor prefix properties such as box-shadow, 
 
 ### Fonts
 
-If outside font files are needed, then a separate font file should be created and named `_fonts.stylus`. Multiple styles and weights of a font should be set using `@font-face`, but should all have the same font family name. Ensure when declaring the font to provide backup font styles.  
+If outside font files are needed, then a separate font file should be created and named `_fonts.sass`. Multiple styles and weights of a font should be set using `@font-face`, but should all have the same font family name. Ensure when declaring the font to provide backup font styles.  
 
-```stylus
+```sass
 // proxima nova
 @font-face
     font-family: 'proxima-nova'
@@ -521,7 +521,7 @@ font-family: 'proxima-nova'
 
 ### Declaration
 
-Variables are declared using the `$` notation. Mixins should be housed in a file called `_variables.stylus`. Variables are used for common colors, fonts, and numbers used throughout the stylesheets. 
+Variables are declared using the `$` notation. Mixins should be housed in a file called `_variables.sass`. Variables are used for common colors, fonts, and numbers used throughout the stylesheets. 
 
 * Variables should follow dashed formatting
 * Ensure that variables are not ambiguous and describe the value they hold. 
@@ -529,7 +529,7 @@ Variables are declared using the `$` notation. Mixins should be housed in a file
 * Comment each variable or group to document the values. 
 * Inheritance of colors should be used whenever possible
 
-```stylus
+```sass
 // bad
 
 $red: #ea5b54
@@ -552,7 +552,7 @@ $brand-secondary-color: #008fc5
 
 Each project should have default variables that are associated with it. These include the following: `font-size`, `font-family`, `line-height`. These values should be set to the body in the global stylesheet. 
 
-```stylus
+```sass
 body
     font: normal #{$font-size}/#{$line-height} "proxima-nova", sans-serif
 ```
@@ -561,7 +561,7 @@ body
 
 When manipulating a sizing variable in a stylesheet, use relative `*` modifiers instead of a fixed value. This allows for simple global font changes in the future, as well as simple font scaling for responsive designs. Any arithmetic operators should have a space before and after.  
 
-```stylus
+```sass
 // bad
 p
     font-size: 16px
@@ -588,7 +588,7 @@ Comment style should be simple and consistent within a single code base.
 * Comment major code ideas.
 * Comments on every selector is unnecessary.
 
-```stylus
+```sass
 // bad
 
 // too far away
@@ -624,4 +624,4 @@ section
 <a name="thanks">Thanks</a>
 ======
 
-Thanks to [CSS/Sass style guide](https://github.com/isellsoap/css-stylus-style-guide) for an outline of ideas and veribage for expressing concepts. 
+Thanks to [CSS/Sass style guide](https://github.com/isellsoap/css-sass-style-guide) for an outline of ideas and veribage for expressing concepts. 

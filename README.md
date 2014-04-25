@@ -184,7 +184,7 @@ input
     border: 1px solid #ccc
     
 h1
-    font-size: $font-size + 10
+    font-size: font-size + 10
     
 p
     color: #666
@@ -430,23 +430,23 @@ Separate words in ID and class names by a hyphen. Do not concatenate words and a
 <a name="imports">Imports and Charset</a>
 ------------------
 
-SASS imports and charset declarations should always be at the top of each SASS file. Important are used to include variables, mixins, fonts, and other chunks of code that are reusable. 
+Stylus imports and charset declarations should always be at the top of each Stylus file. Important are used to include variables, mixins, fonts, and other chunks of code that are reusable. 
 
 * `@charset` declaration should always be the first thing. The default charset to be used is UTF-8.
 * Variables, fonts, and then mixin declarations should then immediately follow. 
 * If the file needs a reset or normalize, that should then follow next. 
 * Comments should also be used to describe any other mixins that are not the standard `_variables`, `_fonts`, `_mixins`, or `_reset`
-* File extenions should only be used if the extension is not the default `.sass`
+* File extenions should only be used if the extension is not the default `.styl`
 
 ```sass
 // bad
 
 // imports
-@import "_mixins.sass"
-@import "_fonts.scss"
-@import "_variables.sass"
-@import "_reset.sass"
-@import "_tips.sass"
+@import "_mixins.styl"
+@import "_fonts.styl"
+@import "_variables.styl"
+@import "_reset.styl"
+@import "_tips.styl"
 
 @charset "UTF-8"
 
@@ -455,7 +455,7 @@ SASS imports and charset declarations should always be at the top of each SASS f
 @charset "UTF-8"
 
 @import "_variables"
-@import "_fonts.scss"
+@import "_fonts"
 @import "_mixins"
 @import "_reset"
 
@@ -470,7 +470,7 @@ SASS imports and charset declarations should always be at the top of each SASS f
 <a name="mixins">Mixins</a>
 ------
 
-Mixins are declared using the `@mixin` declaration. Mixins should be housed in a file called `_mixins.sass`. Mixins are used for code that is frequently repeated through the stylesheets, but may not necessarily correspond to a single element or class. 
+Mixins are declared using the `function` type declaration. Mixins should be housed in a file called `_mixins.styl`. Mixins are used for code that is frequently repeated through the stylesheets, but may not necessarily correspond to a single element or class. 
 
 * Mixin names should follow dashed, lowercase formatting.
 * Mixins should be order alphabetically by their title for organization.
@@ -479,15 +479,15 @@ Mixins are declared using the `@mixin` declaration. Mixins should be housed in a
 
 ```sass
 // bad
-@mixin button($color)
-    background: $color
+button(color)
+    background: color
     display: block
     text-align: center
 
 
 // good
-@mixin button($color: $blue)
-    background: $color
+button(color = blue)
+    background: color
     display: block
     text-align: center
 ```
@@ -496,7 +496,7 @@ Mixins are encouraged for multiple vendor prefix properties such as box-shadow, 
 
 ### Fonts
 
-If outside font files are needed, then a separate font file should be created and named `_fonts.sass`. Multiple styles and weights of a font should be set using `@font-face`, but should all have the same font family name. Ensure when declaring the font to provide backup font styles.  
+If outside font files are needed, then a separate font file should be created and named `_fonts.styl`. Multiple styles and weights of a font should be set using `@font-face`, but should all have the same font family name. Ensure when declaring the font to provide backup font styles.  
 
 ```sass
 // proxima nova
@@ -521,7 +521,7 @@ font-family: 'proxima-nova'
 
 ### Declaration
 
-Variables are declared using the `$` notation. Mixins should be housed in a file called `_variables.sass`. Variables are used for common colors, fonts, and numbers used throughout the stylesheets. 
+Variables are declared using the `=` notation. Variables should be housed in a file called `_variables.styl`. Variables are used for common colors, fonts, and numbers used throughout the stylesheets. 
 
 * Variables should follow dashed formatting
 * Ensure that variables are not ambiguous and describe the value they hold. 
@@ -532,20 +532,20 @@ Variables are declared using the `$` notation. Mixins should be housed in a file
 ```sass
 // bad
 
-$red: #ea5b54
-$green: #98fe98
-$primary: #00853e
-$secondary: #008fc5
+red = #ea5b54
+green = #98fe98
+primary = #00853e
+secondary = #008fc5
 
 // good
 
 // error and success colors
-$error-red: #ea5b54
-$success-green: #98fe98
+error-red = #ea5b54
+success-green = #98fe98
 
 // brand colors
-$brand-primary-color: #00853e
-$brand-secondary-color: #008fc5
+brand-primary-color = #00853e
+brand-secondary-color = #008fc5
 ```
 
 ### Default Values
@@ -554,7 +554,7 @@ Each project should have default variables that are associated with it. These in
 
 ```sass
 body
-    font: normal #{$font-size}/#{$line-height} "proxima-nova", sans-serif
+    font: normal {font-size}/{line-height} "proxima-nova", sans-serif
 ```
 
 ### Manipulation
@@ -570,8 +570,8 @@ p
 
 // good
 p
-    font-size: $font-size * 1.15
-    line-height: $line-height * 1.2
+    font-size: font-size * 1.15
+    line-height: line-height * 1.2
 ```
 
 

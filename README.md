@@ -510,6 +510,7 @@ button(color = blue)
 Mixins are encouraged for multiple vendor prefix properties such as box-shadow, transition, transform, gradient, etc. 
 
 <a name="fonts">Fonts</a>
+---
 
 If outside font files are needed, then a separate font file should be created and named `_fonts.styl`. Multiple styles and weights of a font should be set using `@font-face`, but should all have the same font family name. Ensure when declaring the font to provide backup font styles.  
 

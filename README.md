@@ -1,4 +1,4 @@
-Grasshopper Stylus Style Guide
+Stylus Style Guide
 ============================
 
 *A guide to developing robust stylesheets in Stylus*
@@ -8,11 +8,26 @@ Table of Contents
     
 1. [General Principles](#general)
 2. [Formatting](#formatting)
+    - Spacing and Indentation
+    - Sorting Properties
+    - Chaining
+    - Nesting
+    - Shorthand Properties
+    - Shorthand Values
+    - Quotation Marks
 3. [Naming](#naming)
-4. [Mixins](#mixins)
-5. [Variables](#variables)
-6. [Comments](#comments)
-7. [Thanks](#thanks)
+    - Case
+    - IDs and Classes
+    - Delimiters
+4. [Imports and Charset](#imports)
+5. [Mixins](#mixins)
+6. [Fonts](#fonts)
+7. [Variables](#variables)
+    - Declaration
+    - Default Values
+    - Manipulation
+8. [Comments](#comments)
+9. [Thanks](#thanks)
 
 
 
@@ -494,7 +509,7 @@ button(color = blue)
 
 Mixins are encouraged for multiple vendor prefix properties such as box-shadow, transition, transform, gradient, etc. 
 
-### Fonts
+<a name="fonts">Fonts</a>
 
 If outside font files are needed, then a separate font file should be created and named `_fonts.styl`. Multiple styles and weights of a font should be set using `@font-face`, but should all have the same font family name. Ensure when declaring the font to provide backup font styles.  
 

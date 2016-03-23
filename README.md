@@ -199,7 +199,7 @@ input
     border: 1px solid #ccc
     
 h1
-    font-size: font-size + 10
+    font-size: $font-size + 10
     
 p
     color: #666

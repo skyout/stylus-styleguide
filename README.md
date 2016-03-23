@@ -199,7 +199,7 @@ input
     border: 1px solid #ccc
     
 h1
-    font-size: $font-size + 10
+    font-size: font-size + 10
     
 p
     color: #666
@@ -548,20 +548,20 @@ Variables are declared using the `=` notation. Variables should be housed in a f
 ```sass
 // bad
 
-$red = #ea5b54
-$green = #98fe98
-$primary = #00853e
-$secondary = #008fc5
+red = #ea5b54
+green = #98fe98
+primary = #00853e
+secondary = #008fc5
 
 // good
 
 // error and success colors
-$error-red = #ea5b54
-$success-green = #98fe98
+error-red = #ea5b54
+success-green = #98fe98
 
 // brand colors
-$brand-primary-color = #00853e
-$brand-secondary-color = #008fc5
+brand-primary-color = #00853e
+brand-secondary-color = #008fc5
 ```
 
 ### Default Values
@@ -570,7 +570,7 @@ Each project should have default variables that are associated with it. These in
 
 ```sass
 body
-    font: normal $font-size/$line-height "proxima-nova", sans-serif
+    font: normal font-size/line-height "proxima-nova", sans-serif
 ```
 
 ### Manipulation
@@ -586,8 +586,8 @@ p
 
 // good
 p
-    font-size: $font-size * 1.15
-    line-height: $line-height * 1.2
+    font-size: font-size * 1.15
+    line-height: line-height * 1.2
 ```
 
 

@@ -124,7 +124,7 @@ ul
     color: #666
 ```
 
-### <a name="nesting">Nesting</a>a
+### <a name="nesting">Nesting</a>
 
 Element selector nesting should only be used when necessary. Direct descendents also should be used sparingly due to the performance hit that comes with their use. Nesting can cause unecessarily large file sizes when a lot of nesting occurs. 
 

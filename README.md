@@ -564,7 +564,7 @@ brand-primary-color = #00853e
 brand-secondary-color = #008fc5
 ```
 
-### <a name="defatults">Default Values</a>
+### <a name="defaults">Default Values</a>
 
 Each project should have default variables that are associated with it. These include the following: `font-size`, `font-family`, `line-height`. These values should be set to the body in the global stylesheet. 
 

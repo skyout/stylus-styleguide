@@ -11,7 +11,7 @@ Table of Contents
     - [Spacing and Indentation](#spacing)
     - [Sorting Properties](#sorting)
     - [Chaining](#chaining)
-    - [Nesting]{#nesting}
+    - [Nesting](#nesting)
     - [Shorthand Properties](#properties)
     - [Shorthand Values](#values)
     - [Quotation Marks](#quotes)
